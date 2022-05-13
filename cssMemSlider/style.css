@@ -1,0 +1,13 @@
+@import "./reset.css";
+
+@font-face {
+  font-family: "Play";
+  font-style: normal;
+  src: url(./assets/fonts/Play/Play-Regular.ttf);
+}
+
+@font-face {
+  font-family: "Bangers";
+  font-style: normal;
+  src: url(./assets/fonts/Bangers/Bangers-Regular.ttf);
+}
