@@ -12,25 +12,25 @@
     <main class="main">
       <div class="container">
         <div class="mem_slider">
-          <input type="radio" id="first" checked />
-          <input type="radio" id="second" />
-          <input type="radio" id="third" />
-          <input type="radio" id="fourth" />
-          <input type="radio" id="fifth" />
+          <input checked type="radio" name="slide_move" id="first" />
+          <input type="radio" name="slide_move" id="second" />
+          <input type="radio" name="slide_move" id="third" />
+          <input type="radio" name="slide_move" id="fourth" />
+          <input type="radio" name="slide_move" id="fifth" />
           <div class="mem_box">
-            <div class="first_slide">
+            <div class="first_slide slide">
               <img src="./assets/img/DreamTeam.jpg" alt="first_slide" />
             </div>
-            <div class="second_slide">
+            <div class="second_slide slide">
               <img src="./assets/img/Mentor.jpg" alt="second_slide" />
             </div>
-            <div class="third_slide">
+            <div class="third_slide slide">
               <img src="./assets/img/Task.jpg" alt="third_slide" />
             </div>
-            <div class="fourth_slide">
+            <div class="fourth_slide slide">
               <img src="./assets/img/TS.jpg" alt="fourth_slide" />
             </div>
-            <div class="fifth_slide">
+            <div class="fifth_slide slide">
               <img src="./assets/img/Iam.jpg" alt="fifth_slide" />
             </div>
           </div>
@@ -44,42 +44,46 @@
               <div class="fourth_title">Technical specifications</div>
               <div class="fifth_title">It's me</div>
             </div>
-          </div>
-          <div class="mem_controls">
-            <label for="first"><span></span></label>
-            <label for="second"><span></span></label>
-            <label for="third"><span></span></label>
-            <label for="fourth"><span></span></label>
-            <label for="fifth"><span></span></label>
+            <div class="mem_controls">
+              <label for="first"><span></span></label>
+              <label for="second"><span></span></label>
+              <label for="third"><span></span></label>
+              <label for="fourth"><span></span></label>
+              <label for="fifth"><span></span></label>
+            </div>
           </div>
         </div>
       </div>
     </main>
     <footer class="footer">
-      <div class="footer-links">
-        <div class="footer-links__github">
-          <a class="link" href="https://github.com/ligalaz" target="_blank">
-            <svg class="logo">
-              <use xlink:href="./assets/logo/github.svg#github"></use>
-            </svg>
-          </a>
-        </div>
-      </div>
-      <div class="footer-create-info">
-        <div class="footer-create__creater">
-          <p>Created by Artisom Mikula</p>
-        </div>
-        <div class="footer-create__create-year">
-          <p>Minsk <time>2022</time></p>
-        </div>
-      </div>
-      <div class="footer-school-info">
-        <div class="footer-school-info__rsschool">
-          <a class="link" href="https://rs.school/" target="_blank">
-            <svg class="logo">
-              <use xlink:href="./assets/logo/rs_school.svg#rs_school"></use>
-            </svg>
-          </a>
+      <div class="container">
+        <div class="footer_row">
+          <div class="footer-links">
+            <div class="footer-links__github">
+              <a class="link" href="https://github.com/ligalaz" target="_blank">
+                <svg class="logo">
+                  <use xlink:href="./assets/logo/github.svg#github"></use>
+                </svg>
+              </a>
+            </div>
+          </div>
+          <div class="footer-create-info">
+            <div class="footer-create__creater">
+              <p>Created by Artisom Mikula</p>
+            </div>
+            <div class="footer-create__create-year">
+              <p>Minsk <time>2022</time></p>
+            </div>
+          </div>
+          <div class="footer-school-info">
+            <div class="footer-school-info__rsschool">
+              <a class="link" href="https://rs.school/" target="_blank">
+                <svg class="logo">
+                  <use xlink:href="./assets/logo/rs_school.svg#rs_school"></use>
+                </svg>
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </footer>
