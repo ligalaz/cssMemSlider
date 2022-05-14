@@ -14,6 +14,18 @@
   src: url(./assets/fonts/Bangers/Bangers-Regular.ttf);
 }
 
+/* variables */
+
+:root {
+  --bg: black;
+  --slider-border: coral;
+  --mem-text: coral;
+  --radio-border: coral;
+  --radio-checked: coral;
+  --logo-regular: wheat;
+  --logo-hover: coral;
+}
+
 /* structure styles */
 
 body {
@@ -24,9 +36,11 @@ body {
   justify-content: center;
   align-items: center;
   margin: 0 auto;
-  padding-top: 3%;
-  background: black;
+  padding-top: 1rem;
+  background: var(--bg);
+  overflow-y: auto;
 }
+
 .main,
 .footer {
   width: 100%;
@@ -36,6 +50,7 @@ body {
 .container {
   max-width: 100%;
 }
+
 .main .container,
 .footer_row {
   display: flex;
@@ -44,41 +59,37 @@ body {
 }
 .footer_row {
   margin: 0 auto;
-  width: 48rem;
+  max-width: 48rem;
   justify-content: space-between;
 }
 
-/* main styles */
+/* slider styles */
 
 .mem_slider {
   max-width: 100%;
   overflow: hidden;
-  border: 0.3rem solid coral;
+  border: 0.3rem solid var(--slider-border);
   border-radius: 0.625rem;
-  margin-bottom: 1rem;
+  padding-top: 1rem;
+  margin-bottom: 0.5rem;
 }
 
 .mem_box {
   width: 500%;
   display: flex;
-}
-.mem_box div {
-  transition: 0.5s ease-in-out;
+  margin-bottom: 1rem;
 }
 
 .slide {
   width: 20%;
-  background: black;
-}
-
-input[type="radio"] {
-  display: none;
+  background: var(--bg);
 }
 
 img {
+  width: 48rem;
   display: block;
   margin: 0 auto;
-  max-width: 48rem;
+  max-width: 100%;
 }
 
 label {
@@ -88,59 +99,78 @@ label {
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  cursor: pointer;
+  cursor: url("./assets/logo/custom_сursor.png"), pointer;
+  transition: 0.5s ease-in-out;
 }
+
 span {
   width: 50%;
   height: 50%;
   border-radius: 100%;
-  border: 3px solid coral;
+  border: 0.19rem solid var(--radio-border);
   display: inline-block;
+  opacity: 0.5;
+}
+
+label:hover > span {
+  background: var(--radio-checked);
+  transition: 0.5s ease-in-out;
+  opacity: 1;
 }
 
 .mem_row {
   display: flex;
   justify-content: space-between;
-  max-width: 48rem;
+  width: 48rem;
+  max-width: 100%;
   align-items: center;
   flex-wrap: wrap;
   margin: 0 auto;
+  margin-bottom: 1rem;
 }
 
 .mem_titles div {
   font-family: "Play";
   font-size: 1.25em;
   font-weight: bold;
-  color: coral;
+  color: var(--mem-text);
   display: none;
   opacity: 0;
-  width: 30rem;
-  cursor: pointer;
+  width: 26rem;
+  cursor: url("./assets/logo/custom_сursor.png"), pointer;
 }
+
+/* footer styles */
 
 .footer-create-info {
   font-family: "Bangers";
-  font-size: 1.3em;
+  font-size: 1.2em;
   color: coral;
   text-align: center;
 }
 
 .logo {
-  fill: wheat;
+  fill: var(--logo-regular);
   width: 4rem;
   height: 4rem;
   transition: 0.5s ease-in-out;
 }
+
 .logo:hover {
   transform: scale(1.3);
-  fill: red;
+  fill: var(--logo-hover);
   transition: 0.5s ease-in-out;
+}
+
+/* controls styles */
+
+input[type="radio"] {
+  display: none;
 }
 
 #first:checked ~ .mem_box {
   transform: translateX(0);
   transition: 0.5s ease-in-out;
-  animation: slidering 0.4s;
 }
 #first:checked ~ .mem_row .first_title {
   display: block;
@@ -148,10 +178,14 @@ span {
   transition: 0.5s ease-in-out;
   opacity: 1;
 }
+#first:checked ~ .mem_row label[for="first"] span {
+  background: var(--radio-checked);
+  opacity: 1;
+}
+
 #second:checked ~ .mem_box {
   transform: translateX(-20%);
   transition: 0.5s ease-in-out;
-  animation: slidering 1s;
 }
 #second:checked ~ .mem_row .second_title {
   display: block;
@@ -159,10 +193,14 @@ span {
   transition: 0.5s ease-in-out;
   opacity: 1;
 }
+#second:checked ~ .mem_row label[for="second"] span {
+  background: var(--radio-checked);
+  opacity: 1;
+}
+
 #third:checked ~ .mem_box {
   transform: translateX(-40%);
   transition: 0.5s ease-in-out;
-  animation: slidering 1s;
 }
 #third:checked ~ .mem_row .third_title {
   display: block;
@@ -170,10 +208,14 @@ span {
   transition: 0.5s ease-in-out;
   opacity: 1;
 }
+#third:checked ~ .mem_row label[for="third"] span {
+  background: var(--radio-checked);
+  opacity: 1;
+}
+
 #fourth:checked ~ .mem_box {
   transform: translateX(-60%);
   transition: 0.5s ease-in-out;
-  animation: slidering 1s;
 }
 #fourth:checked ~ .mem_row .fourth_title {
   display: block;
@@ -181,10 +223,14 @@ span {
   transition: 0.5s ease-in-out;
   opacity: 1;
 }
+#fourth:checked ~ .mem_row label[for="fourth"] span {
+  background: var(--radio-checked);
+  opacity: 1;
+}
+
 #fifth:checked ~ .mem_box {
   transform: translateX(-80%);
   transition: 0.5s ease-in-out;
-  animation: slidering 1s;
 }
 #fifth:checked ~ .mem_row .fifth_title {
   display: block;
@@ -192,6 +238,12 @@ span {
   transition: 0.5s ease-in-out;
   opacity: 1;
 }
+#fifth:checked ~ .mem_row label[for="fifth"] span {
+  background: var(--radio-checked);
+  opacity: 1;
+}
+
+/* animations & effects styles */
 
 @keyframes visib {
   0% {
@@ -208,5 +260,68 @@ span {
   }
   100% {
     opacity: 1;
+  }
+}
+
+@media screen and (max-width: 925px) {
+  img,
+  .mem_row,
+  .footer_row {
+    max-width: 95%;
+  }
+  .mem_titles div {
+    width: 23rem;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .mem_row {
+    flex-direction: column;
+  }
+  .mem_titles {
+    order: 2;
+    align-self: flex-start;
+  }
+  .mem_controls {
+    order: 1;
+    padding-bottom: 1rem;
+  }
+  .mem_titles div {
+    width: auto;
+    font-size: 1.1em;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 479px) {
+  .main,
+  .footer {
+    padding: 0 2%;
+  }
+
+  .mem_slider {
+    border: 0.2rem solid var(--slider-border);
+    margin-bottom: 4rem;
+  }
+
+  .mem_titles div {
+    width: auto;
+    font-size: 0.8em;
+  }
+
+  label {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  .mem_controls {
+    padding-bottom: 0.5rem;
+  }
+
+  .footer-create-info {
+    font-size: 0.5em;
+  }
+  .logo {
+    width: 1.5rem;
+    height: 1.5rem;
   }
 }
