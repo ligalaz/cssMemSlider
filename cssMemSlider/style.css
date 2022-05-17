@@ -114,8 +114,14 @@ span {
 
 label:hover > span {
   background: var(--radio-checked);
+
   transition: 0.5s ease-in-out;
-  opacity: 1;
+  opacity: 0.5;
+}
+label:active > span {
+  background: var(--radio-checked);
+  transition: 0.3s ease-in-out;
+  opacity: 0.7;
 }
 
 .mem_row {
